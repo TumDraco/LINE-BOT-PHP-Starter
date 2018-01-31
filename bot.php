@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
 					'type' => 'buttons',
 					'title' => 'Menu',
 					'text' => 'Please select',
-					'actions' => $action
+					'actions' => [$action]
 				];
 				
 				$messages = [
