@@ -20,9 +20,9 @@ if (!is_null($events['events'])) {
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
 				$action = [
-					'type' => 'postback',
+					'type' => 'uri',
 					'label' => 'test',
-					'data' => $text
+					'uri' => $text
 				];
 				$messages = [
 					'type' => 'buttons',
