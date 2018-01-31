@@ -12,7 +12,7 @@ if (!is_null($events['events'])) {
 		// Reply only when message sent is in 'text' format
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
-			if (strpos($event['message']['text'], '@BOT') !== false) {
+			if (strpos(strtoupper($event['message']['text']), '@BOT') !== false) {
 
 				// Get text sent
 				$text = 'แกนั่นแหละ'.str_replace('@BOT','',$event['message']['text']);
