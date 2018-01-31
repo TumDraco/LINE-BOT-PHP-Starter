@@ -14,8 +14,40 @@ if (!is_null($events['events'])) {
 			
 			if (strpos($event['message']['text'], '@BOT') !== false) {
 				
+				
+				$file = file_get_contents('http://www.settrade.com/C04_02_stock_historical_p1.jsp?txtSymbol=TRUE&selectPage=2&max=180');
+
+				$str = str_replace("class='tablecolor1'>","@C@",$file);
+				$str = str_replace("class='tablecolor2'>","@C@",$str);
+				$str = str_replace('style="height:10px;"><img',"@C@",$str);
+
+				$arr = explode('@C@',$str);
+
+				array_shift($arr);
+				array_pop($arr);
+				$text = '';
+				foreach( $arr as $row){
+				  $row = str_replace('</div>',"@C@",$row);
+
+				  $row = strip_tags(trim($row));
+
+				  $row = explode('@C@',$row);
+
+				  $row = array_slice($row,0,12);
+
+				  $text = $text . implode('|',$row)."<br />";
+				
+				
+				
+				
+				
+				
+				
+				
+				
+				
 				// Get text sent
-				$text = $event['message']['text'];
+				//$text = $event['message']['text'];
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
