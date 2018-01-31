@@ -40,7 +40,7 @@ if (!is_null($events['events'])) {
 				$messages = [
 					'type' => 'template',
 					'altText' => 'buttons template'
-					'template' => [$template],
+					'template' => $template
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
