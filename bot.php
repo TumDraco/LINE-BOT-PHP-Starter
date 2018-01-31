@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			if (strpos($event['message']['text'], '@BOT') !== false) {
 
 				// Get text sent
-				$text = $event['message']['text'];
+				$text = 'line://nv/camera/'; //$event['message']['text'];
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
