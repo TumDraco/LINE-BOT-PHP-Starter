@@ -25,9 +25,9 @@ if (!is_null($events['events'])) {
 				//];
 				
 				$action = [
-						'type' => 'uri',
-						'label' => 'test',
-						'uri' => 'https://line.me/R/nv/camera/'
+					'type' => 'uri',
+					'label' => 'test',
+					'uri' => 'https://line.me/R/nv/camera/'
 				];
 				
 				$template = [
