@@ -19,9 +19,15 @@ if (!is_null($events['events'])) {
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
+				$action = [
+					'type' => 'postback',
+					'label' => 'test',
+					'data' => $text
+				];
 				$messages = [
-					'type' => 'text',
-					'text' => $text
+					'type' => 'buttons',
+					'text' => 'test',
+					'actions' => $action
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
