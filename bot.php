@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 				  $row = array_slice($row,0,12);
 
 				  $text = $text . implode('|',$row)."<br />";
-				
+				}
 				
 				
 				
