@@ -19,15 +19,26 @@ if (!is_null($events['events'])) {
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
-				$action = [
-					'type' => 'uri',
-					'label' => 'test',
-					'uri' => $text
-				];
-				$messages = [
+				//$messages = [
+				//	'type' => 'text',
+				//	'text' => $text
+				//];
+				
+				$template = [
 					'type' => 'buttons',
-					'text' => 'test',
-					'actions' => $action
+					'title' => 'Menu',
+					'text' => 'Please select',
+					'actions' => [
+						'type' => 'uri',
+						'label' => 'test',
+						'uri' => 'https://line.me/R/nv/camera/'
+						]
+					]
+				
+				$messages = [
+					'type' => 'template',
+					'altText' => 'buttons template'
+					'template' => $template
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
