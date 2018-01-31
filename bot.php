@@ -15,7 +15,7 @@ if (!is_null($events['events'])) {
 			if (strpos(strtoupper($event['message']['text']), '@BOT') !== false) {
 
 				// Get text sent
-				$text = 'แกนั่นแหละ'.str_replace('@BOT','',$event['message']['text']);
+				$text = 'แกนั่นแหละ'.str_replace('@BOT','',strtoupper($event['message']['text']));
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
