@@ -24,11 +24,11 @@ if (!is_null($events['events'])) {
 					'text' => $text
 				];
 				
-				//$action = [
-				//	'type' => 'uri',
-				//	'label' => 'test',
-				//	'uri' => 'https://line.me/R/nv/camera/'
-				//];
+				$action = [
+					'type' => 'uri',
+					'label' => 'test',
+					'uri' => 'https://line.me/R/nv/camera/'
+				];
 				
 				//$template = [
 				//	'type' => 'buttons',
