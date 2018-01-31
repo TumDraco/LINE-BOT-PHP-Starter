@@ -30,12 +30,12 @@ if (!is_null($events['events'])) {
 					'uri' => 'https://line.me/R/nv/camera/'
 				];
 				
-				//$template = [
-				//	'type' => 'buttons',
-				//	'title' => 'Menu',
-				//	'text' => 'Please select',
-				//	'actions' => [$action],
-				//];
+				$template = [
+					'type' => 'buttons',
+					'title' => 'Menu',
+					'text' => 'Please select',
+					'actions' => [$action],
+				];
 				
 				//$messages = [
 				//	'type' => 'template',
