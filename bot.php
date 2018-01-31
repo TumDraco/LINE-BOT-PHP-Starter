@@ -34,13 +34,13 @@ if (!is_null($events['events'])) {
 					'type' => 'buttons',
 					'title' => 'Menu',
 					'text' => 'Please select',
-					'actions' => $action
+					'actions' => [$action]
 				];
 				
 				$messages = [
 					'type' => 'template',
 					'altText' => 'buttons template'
-					'template' => $template
+					'template' => [$template]
 				];
 
 				// Make a POST Request to Messaging API to reply to sender
