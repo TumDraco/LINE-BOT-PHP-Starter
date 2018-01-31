@@ -24,24 +24,55 @@ if (!is_null($events['events'])) {
 				//	'text' => $text
 				//];
 				
-				$action = [{
-					'type' => 'uri',
-					'label' => 'test',
-					'uri' => 'https://line.me/R/nv/camera/'
-				}];
+				//$action = [{
+				//	'type' => 'uri',
+				//	'label' => 'test',
+				//	'uri' => 'https://line.me/R/nv/camera/'
+				//}];
 				
-				$template = [
-					'type' => 'buttons',
-					'title' => 'Menu',
-					'text' => 'Please select',
-					'actions' => [$action]
-				];
+				//$template = [
+				//	'type' => 'buttons',
+				//	'title' => 'Menu',
+				//	'text' => 'Please select',
+				//	'actions' => [$action]
+				//];
 				
-				$messages = [
-					'type' => 'template',
-					'altText' => 'buttons template'
-					'template' => $template
-				];
+				//$messages = [
+				//	'type' => 'template',
+				//	'altText' => 'buttons template'
+				//	'template' => $template
+				//];
+				
+				$messages = '{
+  "type": "template",
+  "altText": "This is a buttons template",
+  "template": {
+      "type": "buttons",
+      "thumbnailImageUrl": "https://example.com/bot/images/image.jpg",
+      "imageAspectRatio": "rectangle",
+      "imageSize": "cover",
+      "imageBackgroundColor": "#FFFFFF",
+      "title": "Menu",
+      "text": "Please select",
+      "actions": [
+          {
+            "type": "postback",
+            "label": "Buy",
+            "data": "action=buy&itemid=123"
+          },
+          {
+            "type": "postback",
+            "label": "Add to cart",
+            "data": "action=add&itemid=123"
+          },
+          {
+            "type": "uri",
+            "label": "View detail",
+            "uri": "http://example.com/page/123"
+          }
+      ]
+  }
+}';
 
 				// Make a POST Request to Messaging API to reply to sender
 				$url = 'https://api.line.me/v2/bot/message/reply';
