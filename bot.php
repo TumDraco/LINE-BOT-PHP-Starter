@@ -15,14 +15,14 @@ if (!is_null($events['events'])) {
 			if (strpos($event['message']['text'], '@BOT') !== false) {
 
 				// Get text sent
-				$text = 'https://line.me/R/nv/camera/'; //$event['message']['text'];
+				$text = $event['message']['text'];
 				// Get replyToken
 				$replyToken = $event['replyToken'];
 				// Build message to reply back
-				//$messages = [
-				//	'type' => 'text',
-				//	'text' => $text
-				//];
+				$messages = [
+					'type' => 'text',
+					'text' => $text
+				];
 				
 				$action = [
 					'type' => 'uri',
@@ -37,11 +37,11 @@ if (!is_null($events['events'])) {
 					'actions' => [$action],
 				];
 				
-				$messages = [
-					'type' => 'template',
-					'altText' => 'buttons template'
-					'template' => [$template],
-				];
+				//$messages = [
+				//	'type' => 'template',
+				//	'altText' => 'buttons template'
+				//	'template' => [$template],
+				//];
 
 				// Make a POST Request to Messaging API to reply to sender
 				$url = 'https://api.line.me/v2/bot/message/reply';
