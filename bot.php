@@ -13,32 +13,6 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
 			
 			if (strpos(strtoupper($event['message']['text']), '@BOT') !== false) {
-
-			$html = file_get_contents('http://www.settrade.com/C04_02_stock_historical_p1.jsp?txtSymbol=ADVANC&selectPage=2'); //get the html returned from the following url
-
-			$url_doc = new DOMDocument();
-
-			libxml_use_internal_errors(TRUE); //disable libxml errors
-			$test = '';
-			if(!empty($html)){ //if any html is actually returned
-
-				$url_doc->loadHTML($html);
-				libxml_clear_errors(); //remove errors for yucky html
-				
-				$url_xpath = new DOMXPath($url_doc);
-
-				//get all the h2's with an id
-				$url_row = $url_xpath->query('//h1[@id]');
-
-				if($url_row->length > 0){
-					foreach($url_row as $row){
-						$test = $row;
-						break;
-					}
-				}
-			}	
-			
-			
 			
 				// Get text sent
 				$text = 'แกนั่นแหละ'.str_replace('@BOT','',strtoupper($event['message']['text'])).' '.$test;
